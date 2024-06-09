@@ -12,7 +12,7 @@ import java.util.Set;
 public class ItemHammer extends ItemTool
 {
     private static final Set field_150915_c = Sets.newHashSet(new Block[] {Blocks.stone, Blocks.cobblestone, Blocks.gravel, Blocks.sandstone});
-    private static final String __OBFID = "CL_00000053";
+    private static final String __NOOBFID = "CL_00000053";
 
     protected ItemHammer(Item.ToolMaterial p_i45347_1_)
     {

@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 
 public class InventoryBrickOvenMatrix extends InventoryCrafting implements IInventory
 {
-	private static final String __OBFID = "CL_00001743";
+	private static final String __NOOBFID = "CL_00001743";
 	/**
 	 * List of the stacks in the crafting matrix.
 	 */
