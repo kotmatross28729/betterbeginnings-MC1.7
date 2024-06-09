@@ -6,6 +6,7 @@ import net.einsteinsci.betterbeginnings.register.recipe.elements.RecipeElement;
 import net.einsteinsci.betterbeginnings.tileentity.TileEntityBrickOven;
 import net.einsteinsci.betterbeginnings.tileentity.TileEntityNetherBrickOven;
 import net.minecraft.item.ItemStack;
+import org.apache.logging.log4j.LogManager;
 
 public class BrickOvenShapelessRecipe implements IBrickOvenRecipe
 {
@@ -41,19 +42,17 @@ public class BrickOvenShapelessRecipe implements IBrickOvenRecipe
 				if (itemstack != null)
 				{
 					boolean flag = false;
-					Iterator iterator = arraylist.iterator();
 
-					while (iterator.hasNext())
-					{
-						RecipeElement itemstack1 = (RecipeElement)iterator.next();
-
-						if (itemstack1 != null && itemstack1.matches(itemstack))
-						{
-							flag = true;
-							arraylist.remove(itemstack1);
-							break;
-						}
-					}
+                    for (RecipeElement itemstack1 : arraylist) {
+                        //if (itemstack1 != null) {
+                            //LogManager.getLogger().error(itemstack1 + " matches? " + itemstack1.matches(itemstack));
+                        //}
+                        if (itemstack1 != null && itemstack1.matches(itemstack)) {
+                            flag = true;
+                            arraylist.remove(itemstack1);
+                            break;
+                        }
+                    }
 
 					if (!flag)
 					{

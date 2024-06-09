@@ -60,6 +60,12 @@ public class BBConfig
 	public static Map<Item, Integer> alsoPickaxes;
 	public static Map<Item, Integer> alsoAxes;
 
+    public static boolean noFoodRecipesNBTCheck;
+    public static boolean noFoodRecipesNBTCheckWithSize;
+
+    public static boolean noAllRecipesNBTCheck;
+    public static boolean noAllRecipesNBTCheckWithSize;
+
 	public static void initialize()
 	{
 		greetUser = true;
@@ -97,10 +103,24 @@ public class BBConfig
 		alwaysBreakableNames = new ArrayList<>();
 		alsoPickaxesStrings = new ArrayList<>();
 		alsoAxesStrings = new ArrayList<>();
+
+        noFoodRecipesNBTCheck = true;
+        noFoodRecipesNBTCheckWithSize = true;
+        noAllRecipesNBTCheck = true;
+        noAllRecipesNBTCheckWithSize = true;
 	}
 
 	public static void syncConfig(Configuration config)
 	{
+        noFoodRecipesNBTCheck = config.getBoolean("Don't check NBT in recipes (food)", GENERAL, true,
+            "If this option is enabled, then food recipes will not take into account nbt tags of ingredients in craft, this fixes errors when food has third-party nbt tags, which causes recipes to stop working (for example rotting from Enviromine).");
+        noFoodRecipesNBTCheckWithSize = config.getBoolean("Don't check NBT in recipes that take into account the number of items in the stack (food)", GENERAL, true,
+            "If this option is enabled, then food recipes (that take into account the number of items in the stack) will not take into account nbt tags of ingredients in craft, this fixes errors when food has third-party nbt tags, which causes recipes to stop working (for example rotting from Enviromine).");
+        noAllRecipesNBTCheck = config.getBoolean("Don't check NBT in recipes (all)", GENERAL, false,
+            "If this option is enabled, then ALL BetterBeginnings recipes will not take into account nbt tags of ingredients in craft.");
+        noAllRecipesNBTCheckWithSize = config.getBoolean("Don't check NBT in recipes that take into account the number of items in the stack (all)", GENERAL, false,
+            "If this option is enabled, then ALL BetterBeginnings recipes (that take into account the number of items in the stack) will not take into account nbt tags of ingredients in craft.");
+
 		// region BOOLEANS
 
 		// General

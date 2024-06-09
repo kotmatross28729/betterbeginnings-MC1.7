@@ -8,6 +8,7 @@ import net.einsteinsci.betterbeginnings.tileentity.TileEntityBrickOven;
 import net.einsteinsci.betterbeginnings.tileentity.TileEntityNetherBrickOven;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import org.apache.logging.log4j.LogManager;
 
 public class BrickOvenShapedRecipe implements IBrickOvenRecipe
 {
@@ -114,6 +115,8 @@ public class BrickOvenShapedRecipe implements IBrickOvenRecipe
 					{
 						return false;
 					}
+
+                    //LogManager.getLogger().error(recipeIngredient + " matches? " + recipeIngredient.matches(itemstack1));
 
 					if(!recipeIngredient.matches(itemstack1))
 					{
