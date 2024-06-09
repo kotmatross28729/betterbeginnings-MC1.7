@@ -1,0 +1,16 @@
+[
+{
+  "modid": "betterbeginnings",
+  "name": "BetterBeginnings",
+  "description": "Rebalances early stages of Minecraft, and creates alternatives to the typical vanilla grind.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["einsteinsci","iLiminate","AnonTheMouse","Leviathan143"],
+  "credits": "AnonTheMouse for the brilliant idea, and the rest of the team with more ideas and help with the code",
+  "logoFile": "logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]
